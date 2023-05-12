@@ -1,0 +1,22 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Css
+@import "../css/app.css";
+
+@font-face {
+    font-family: 'IRANSansX';
+    src: url('../css/fonts/IRANSansX-Black.ttf') format('truetype');
+    src: url('../css/fonts/IRANSansX-Bold.ttf') format('truetype');
+    src: url('../css/fonts/IRANSansX-DemiBold.ttf') format('truetype');
+}
+
+*{
+    font-family: 'IRANSansX';
+}
