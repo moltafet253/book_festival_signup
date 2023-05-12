@@ -24,12 +24,14 @@ return new class extends Migration
             $table->string('pages_number');
             $table->unsignedBigInteger('special_section')->nullable();
             $table->foreign('special_section')->references('id')->on('special_sections');
+            $table->string('properties')->nullable();
 
             //book fields
             $table->string('publisher')->nullable();
             $table->string('ISSN')->nullable();
             $table->string('publish_status')->default('منتشر نشده')->nullable();
             $table->integer('number_of_covers')->nullable();
+            $table->integer('book_size')->nullable();
             $table->integer('circulation')->nullable();
 
             //thesis fields
@@ -38,7 +40,8 @@ return new class extends Migration
             $table->integer('thesis_grade')->nullable();
             $table->string('thesis_supervisor')->nullable();
             $table->string('thesis_advisor')->nullable();
-            $table->string('thesis_defence_date')->nullable();
+            $table->string('thesis_defence_data')->nullable();
+
 
             //research type
             $table->string('research_type');

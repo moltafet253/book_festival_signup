@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Helli\TeachingInfo;
+use App\Models\Book\TeachingInfo;
 use App\Models\UserActivityLog;
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;

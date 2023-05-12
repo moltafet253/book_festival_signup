@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Helli\HelliUserMaxUploadPost;
-use App\Models\Helli\Participant;
+use App\Models\Book\HelliUserMaxUploadPost;
+use App\Models\Book\Participant;
 use App\Models\UserActivityLog;
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;

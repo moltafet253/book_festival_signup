@@ -24,8 +24,9 @@
 
                         <div class="flex items-center mt-4 gap-16">
 
+<!--                            v-if="showErrorNotSubmittedInfos===false"-->
                             <div
-                                v-if="max_uploads.numbers!==0 && max_uploads.sent_status!==1 && showErrorNotSubmittedInfos===false && showErrorAgeRequirement!==true"
+
                                 class="w-full lg:w-3/12 flex-row bg-white  rounded-lg shadow">
                                 <!-- click open modal -->
                                 <div @click="showNewPostModal"
@@ -43,59 +44,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div v-else-if="showErrorNotSubmittedInfos===true && showErrorAgeRequirement!==true"
-                                 class=" mx-4 p-3 flex bg-red-100 rounded-xl border border-colorborder w-full">
-                                <div class=" flex-row ">
-                                    <div class="relative w-full">
-                                        <img class="bg-red-500 rounded-md p-1"
-                                             src="build/assets/icons/Info Square.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="w-full flex-row">
-                                    <div class="relative w-full mr-3">
-                                        <p class="mb-0">کاربر گرامی؛ اطلاعات شما در سامانه ثبت نشده است. لطفا برای ثبت
-                                            اثر جدید، در ابتدا اطلاعات خود را تکمیل نمایید.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div v-else-if="showErrorAgeRequirement===true"
-                                 class=" mx-4 p-3 flex bg-red-100 rounded-xl border border-colorborder w-full">
-                                <div class=" flex-row ">
-                                    <div class="relative w-full">
-                                        <img class="bg-red-500 rounded-md p-1"
-                                             src="build/assets/icons/Info Square.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="w-full flex-row">
-                                    <div class="relative w-full mr-3">
-                                        <p class="mb-0">کاربر گرامی؛ شرط سنی شما برای شرکت به جشنواره مجاز نمی باشد.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                v-if="max_uploads.numbers===0 && max_uploads.sent_status!==1 && showErrorAgeRequirement!==true">
-                                <div class=" mx-4 p-3 flex bg-red-100 rounded-xl border border-colorborder w-full">
-                                    <div class=" flex-row ">
-                                        <div class="relative w-full">
-                                            <img class="bg-red-500 rounded-md p-1"
-                                                 src="build/assets/icons/Info Square.svg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="w-full flex-row">
-                                        <div class="relative w-full mr-3">
-                                            <p class="mb-0">کاربر گرامی؛ تعداد سه اثر در جشنواره با کد ملی شما ثبت شده
-                                                است. در فهرست زیر می توانید تمامی آثار ثبت شده خود را مشاهده
-                                                کرده و آثاری که وارد کرده اید را حذف یا ویرایش کنید.
-                                            </p>
-                                            <br>
-                                            <p class="mb-0">چنانچه اثری به نام شما ثبت شده و متعلق به شما نیست، لطفا
-                                                به هیچ وجه آثار خود را ارسال نهایی نکرده و به دبیرخانه
-                                                جشنواره استان یا مدرسه خود گزارش دهید.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<!--                            <div v-else-if="showErrorNotSubmittedInfos===true"-->
+<!--                                 class=" mx-4 p-3 flex bg-red-100 rounded-xl border border-colorborder w-full">-->
+<!--                                <div class=" flex-row ">-->
+<!--                                    <div class="relative w-full">-->
+<!--                                        <img class="bg-red-500 rounded-md p-1"-->
+<!--                                             src="build/assets/icons/Info Square.svg" alt="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="w-full flex-row">-->
+<!--                                    <div class="relative w-full mr-3">-->
+<!--                                        <p class="mb-0">کاربر گرامی؛ اطلاعات شما در سامانه ثبت نشده است. لطفا برای ثبت-->
+<!--                                            اثر جدید، در ابتدا اطلاعات خود را تکمیل نمایید.</p>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <transition enter-active-class="transition ease-out duration-100" enter-class="opacity-0"
                                         enter-to-class="opacity-100" leave-active-class="transition ease-in duration-75"
                                         leave-class="opacity-100" leave-to-class="opacity-0">
@@ -117,7 +80,7 @@
                                                         <span class="pl-1"><img src="build/assets/icons/Edit Square.png"
                                                                                 alt=""></span>
                                                         <h2 class="text-base font-bold ">اطلاعات اثر برای شرکت در
-                                                            پانزدهمین جشنواره علامه حلی (ره)</h2>
+                                                            بیست و پنجمین همایش کتاب سال حوزه</h2>
                                                     </div>
                                                     <div
                                                         class="flex items-center gap-1 border-2 border-gray-300 p-2 rounded-lg">
@@ -151,11 +114,55 @@
                                                     <hr class="flex-grow border-t-2 border-b-orange mr-4 mt-3">
                                                 </div>
                                                 <div class="flex flex-wrap mt-2 px-4">
-
-                                                    <div class="w-full lg:w-8/12 px-4 flex-row">
+                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
-                                                            >نام اثر<span
+                                                            >قالب اثر<span
+                                                                style="color: red;">*</span></label>
+                                                            <select v-model="post_format"
+                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option disabled selected value="">انتخاب کنید
+                                                                </option>
+                                                                <option value="book">کتاب</option>
+                                                                <option value="thesis">پایان نامه</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >نوع اثر<span
+                                                                style="color: red;">*</span></label>
+                                                            <select v-model="post_type"
+                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option disabled selected value="">انتخاب کنید
+                                                                </option>
+                                                                <option value="تحقیق و تألیف">تحقیق و تألیف</option>
+                                                                <option value="ترجمه">ترجمه</option>
+                                                                <option value="تصحیح و تعلیق">تصحیح و تعلیق</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >زبان<span
+                                                                style="color: red;">*</span></label>
+                                                            <select v-model="language"
+                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option disabled selected value="">انتخاب کنید
+                                                                </option>
+                                                                <option v-for="language in languages"
+                                                                        :value="language.title">
+                                                                    {{ language.title }}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >عنوان<span
                                                                 style="color: red;">*</span></label>
                                                             <input type="text" id="name" name="name" v-model="name"
                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
@@ -164,66 +171,48 @@
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
-                                                            >قالب پژوهش<span
+                                                            >ناشر<span
                                                                 style="color: red;">*</span></label>
-                                                            <select v-model="research_format"
+                                                            <select v-model="publisher"
                                                                     class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
                                                                 <option disabled selected value="">انتخاب کنید
                                                                 </option>
-                                                                <option v-for="formats in research_formats"
-                                                                        :value="formats.title">{{ formats.title }}
+                                                                <option v-for="publisher in publishers"
+                                                                        :value="publisher.title">{{ publisher.title }}
                                                                 </option>
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
-                                                        <div class="relative w-full mb-3">
-                                                            <label class="block uppercase  text-base font-bold mb-2"
-                                                            >گروه علمی<span
-                                                                style="color: red;">*</span></label>
-                                                            <select v-model="scientific_group"
-                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
-                                                                <option disabled selected value="">انتخاب کنید
-                                                                </option>
-                                                                <option v-for="groups in scientific_groups"
-                                                                        :value="groups.title">{{ groups.title }}
-                                                                </option>
-                                                            </select>
+                                                    <div class="w-full lg:w-8/12 px-4 flex-row">
+                                                        <div class="flex w-full mt-10">
+                                                            <div class="flex items-center space-x-2">
+                                                                <img
+                                                                    class="bg-yellow-500 md:w-7 w-9 rounded-md p-1 ml-2"
+                                                                    src="build/assets/icons/Danger Triangle.svg" alt="">
+                                                                <p class="mb-0 pt-1">سال انتشار اثر باید XXXX بوده و
+                                                                    نوبت چاپ اول باشد. در غیر اینصورت اثر شما از ارزیابی
+                                                                    حذف خواهد شد.</p>
+                                                            </div>
                                                         </div>
                                                     </div>
+
+
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
-                                                            <label class="block uppercase  text-base font-bold mb-2"
-                                                            >نوع پژوهش<span
-                                                                style="color: red;">*</span></label>
-                                                            <select v-model="research_type"
-                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
-                                                                <option disabled selected value="">انتخاب کنید
-                                                                </option>
-                                                                <option v-for="researchs in research_types"
-                                                                        :value="researchs.title">
-                                                                    {{ researchs.title }}
-                                                                </option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
-                                                        <div class="relative w-full mb-3">
-                                                            <label class="block uppercase  text-base font-bold mb-2"
-                                                            >تعداد صفحات
-                                                                <span v-if="research_format==='مقاله'"
-                                                                      style="color: red;">*</span>
+                                                            <label class="block uppercase  text-base font-bold mb-2">
+                                                                شابک<span
+                                                                style="color: red;">*</span>
                                                             </label>
-                                                            <input type="number" v-model="page_number"
+                                                            <input type="number" v-model="ISSN"
                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
                                                         </div>
                                                     </div>
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
-                                                            >وضعیت نشر<span
+                                                            >قطع<span
                                                                 style="color: red;">*</span></label>
-                                                            <select v-model="publish_status"
+                                                            <select v-model="book_size"
                                                                     class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
                                                                 <option disabled selected value="">انتخاب کنید
                                                                 </option>
@@ -236,7 +225,37 @@
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
-                                                            >بخش ویژه</label>
+                                                            >تیراژ
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="number" v-model="circulation"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >شمارگان صفحه
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="number" v-model="page_number"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >تعداد جلد
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="number" v-model="number_of_covers"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >محور ویژه</label>
                                                             <select v-model="special_section"
                                                                     class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
                                                                 <option disabled selected value="">انتخاب کنید
@@ -249,19 +268,86 @@
 
                                                         </div>
                                                     </div>
+                                                    <div class="w-full lg:w-8/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >ویژگی های اثر
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <textarea v-model="properties" rows="3"
+                                                                      class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                            </textarea>
+                                                            <label class="block uppercase font-bold mt-3">
+                                                                <span style="color: blue;">*</span>
+                                                                ذکر ویژگی هایی که اثر را از سایز آثار متمایز کرده و
+                                                                راهنمای داوران در جهت توجه به برگزیدگی اثر باشد.
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="mt-8 px-8">
-                                                    <div class="flex items-center ">
+                                                    <div class="flex items-center">
                                                         <span class="text-orange-500 pl-1">◼</span>
-                                                        <h2 class="text-base font-bold  ">اطلاعات‌مشارکان</h2>
-                                                        <hr class="w-full border-t-2 border-b-orange mr-4 mt-3">
+                                                        <h2 class="text-base font-bold">نوع تحقیق:</h2>
+                                                        <div class="flex items-center">
+                                                            <select v-model="researchType"
+                                                                    class="border border-colorborder px-3 py-1 mr-3 bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option value="" disabled selected>انتخاب کنید</option>
+                                                                <option value="researchType1">تک رشته ای
+                                                                </option>
+                                                                <option value="researchType2"> میان رشته ای
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <hr class="flex-grow border-t-2 border-b-orange mr-4 mt-3">
+                                                    </div>
+
+                                                    <div class="flex flex-wrap w-full px-4 mt-4 ">
+                                                        <div
+                                                            v-if="researchType==='researchType1' || researchType==='researchType2'"
+                                                            class="relative lg:w-2/5 w-full mb-3  ml-10">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >گروه علمی اول<span
+                                                                style="color: red;">*</span></label>
+                                                            <select v-model="scientific_group1"
+                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option disabled selected value="">انتخاب کنید
+                                                                </option>
+                                                                <option v-for="groups in scientific_groups"
+                                                                        :value="groups.title">{{ groups.title }}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div v-if="researchType==='researchType2'"
+                                                             class="relative lg:w-2/5 w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >گروه علمی دوم<span
+                                                                style="color: red;">*</span></label>
+                                                            <select v-model="scientific_group2"
+                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option disabled selected value="">انتخاب کنید
+                                                                </option>
+                                                                <option v-for="groups in scientific_groups"
+                                                                        :value="groups.title">{{ groups.title }}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="mt-8 px-8">
+                                                    <div class="flex items-center">
+                                                        <span class="text-orange-500 pl-1">◼</span>
+                                                        <h2 class="text-base font-bold">همکاری در نگارش اثر</h2>
+                                                        <hr class="flex-grow border-t-2 border-b-orange mr-4 mt-3">
                                                     </div>
 
                                                     <div class="w-full mt-6 mx-3 ">
                                                         <div>
                                                             <div class="flex items-center">
-                                                                <span>نوع فعالیت: </span>
+                                                                <span>نوع همکاری: </span>
                                                                 <div class="flex items-center">
                                                                     <select v-model="activityType"
                                                                             class="border border-colorborder px-3 py-1 mr-3 bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
@@ -316,7 +402,7 @@
                                                                     شماره پرونده حوزوی
                                                                 </th>
                                                                 <th scope="col" class="px-6 py-3">
-                                                                    درصد مشارکت
+                                                                    درصد همکاری
                                                                 </th>
                                                                 <th scope="col" class="px-6 py-3">
                                                                     تلفن همراه
@@ -423,23 +509,39 @@
                                                                 <span><img class="w-7"
                                                                            src="build/assets/icons/Down Button.png"
                                                                            alt="down"></span>
-                                                                <p class=" mb-0 font-bold px-4">افزودن مشارک</p>
+                                                                <p class=" mb-0 font-bold px-4">افزودن همکار</p>
                                                             </button>
                                                         </div>
 
 
                                                     </div>
+
+                                                </div>
+
+                                                <div class="mt-8 px-8">
                                                     <section>
                                                         <div class="my-8">
-                                                            <div class="flex items-center ">
+                                                            <div class="flex items-center">
                                                                 <span class="text-orange-500 pl-1">◼</span>
-                                                                <h2 class="text-base font-bold">افزودن‌فایل‌اثر</h2>
-                                                                <hr class="w-full border-t-2 border-b-orange mr-4 mt-3">
+                                                                <h2 class="text-base font-bold">نحوه تحویل اثر به
+                                                                    دبیرخانه:</h2>
+                                                                <div class="flex items-center">
+                                                                    <select v-model="postDelivery"
+                                                                            class="border border-colorborder px-3 py-1 mr-3 bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                        <option value="" disabled selected>انتخاب کنید
+                                                                        </option>
+                                                                        <option value="physical">نسخه فیزیکی
+                                                                        </option>
+                                                                        <option value="digital"> نسخه مجازی
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                                <hr class="flex-grow border-t-2 border-b-orange mr-4 mt-3">
                                                             </div>
                                                         </div>
 
-                                                        <div
-                                                            class="w-full lg:w-3/12 mx-3 flex-row bg-white rounded-lg shadow">
+                                                        <div v-if="postDelivery==='digital'"
+                                                             class="w-full lg:w-3/12 mx-3 flex-row bg-white rounded-lg shadow">
                                                             <label for="fileInput"
                                                                    class="cursor-pointer flex justify-center items-center rounded-t-lg border-dashed border-4 border-colorborder border-b-0">
                                                                 <img class="p-8 py-8 rounded-t-lg"
@@ -638,14 +740,14 @@
                             </table>
                         </div>
                         <button
-                            v-if="max_uploads.sent_status===0 && showErrorNotSubmittedInfos===false && showLastSendButton===true && showErrorAgeRequirement!==true"
+                            v-if="showErrorNotSubmittedInfos===false && showLastSendButton===true"
                             @click="showModalLastSend = true"
                             class="bg-green-600 text-white font-bold py-2 px-4 mt-14 rounded-lg mx-auto block"
                         >
                             ارسال نهایی آثار به جشنواره
                         </button>
 
-                        <div v-if="max_uploads.sent_status===1" class="pt-5 flex justify-center ">
+                        <div v-if="sent_status===1" class="pt-5 flex justify-center ">
                             <div
                                 class=" mx-4 p-3 flex bg-green-200 rounded-xl border border-colorborder w-9/12 items-center">
                                 <div class=" flex-row ">
@@ -1475,7 +1577,6 @@ export default {
             error: null,
             nameFile: '',
             message: 'اطلاعات وارد شده را تایید می‌نمایید؟',
-            activeFestivalInfo: [],
             personalInfo: [],
             contactInfo: [],
             eduInfo: [],
@@ -1484,8 +1585,13 @@ export default {
             scientific_groups: [],
             research_types: [],
             special_sections: [],
-            max_uploads: [],
             showModalLastSend: false,
+            postDelivery: '',
+            researchType: '',
+            post_format:'',
+            post_type:'',
+            languages:[],
+            language:'',
 
             //send items
             name: '',
@@ -1496,6 +1602,7 @@ export default {
             publish_status: '',
             special_section: '',
             file: '',
+            sent_status: false,
 
             //errors
             emptyErrors: '',
@@ -1555,6 +1662,7 @@ export default {
             this.getScientificGroup();
             this.getResearchType();
             this.getSpecialSection();
+            this.getLanguages();
             this.showModal3 = true
         },
         editPostShow(id) {
@@ -1690,24 +1798,10 @@ export default {
         },
         axiosReq() {
             this.getTeachingInfo(this.token);
-            this.getActiveFestivalInfo(this.token);
             this.getUserInfo(this.token);
             this.getContactInfo(this.token);
             this.getEduInfo(this.token);
             this.getAllPosts(this.token);
-            this.getMaxUploads(this.token);
-        },
-        async getActiveFestivalInfo(token) {
-            await axios.get(`/getactivefestival/${token}/`)
-                .then(response => {
-                        this.activeFestivalInfo = response.data;
-                    }
-                )
-                .catch(error => {
-                    console.log(error)
-                }).finally(() => {
-                    this.showLoading = false;
-                })
         },
         async getUserInfo(token) {
             await axios.get(`/users/getuserinfo/${token}/`, {
@@ -1720,34 +1814,7 @@ export default {
                     if (response.data[0]['personalImageSrc'] === null) {
                         this.showErrorNotSubmittedInfos = true;
                     } else {
-                        let myBirthDate = response.data[0]['birthdate'];
-                        let chunksmyBirthDate = [];
-                        for (let i = 0, len = myBirthDate.length; i < len; i += 4) {
-                            chunksmyBirthDate.push(myBirthDate.substring(i, i + 4));
-                        }
 
-                        let activeFestivalDate = this.activeFestivalInfo[0]['finish_date'];
-                        let chunksActiveFestivalDate = [];
-                        for (let i = 0, len = activeFestivalDate.length; i < len; i += 4) {
-                            chunksActiveFestivalDate.push(activeFestivalDate.substring(i, i + 4));
-                        }
-
-                        switch (this.teachingInfo[0]['isMaster']){
-                            case 'بله':
-                                if (chunksActiveFestivalDate[0]-chunksmyBirthDate[0]<=50){
-                                    this.showErrorAgeRequirement=false;
-                                }else{
-                                    this.showErrorAgeRequirement=true;
-                                }
-                                break;
-                            case 'خیر':
-                                if (chunksActiveFestivalDate[0]-chunksmyBirthDate[0]<=35){
-                                    this.showErrorAgeRequirement=false;
-                                }else{
-                                    this.showErrorAgeRequirement=true;
-                                }
-                                break;
-                        }
                     }
                 })
                 .catch(error => {
@@ -1867,6 +1934,20 @@ export default {
                 })
         }
         ,
+        async getLanguages() {
+            await axios.get('/defaults/languages', {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+                .then(response => {
+                    this.languages = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
+        ,
         async getSpecialSection() {
             await axios.get('/defaults/special_sections', {
                 headers: {
@@ -1875,20 +1956,6 @@ export default {
             })
                 .then(response => {
                     this.special_sections = response.data;
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-        }
-        ,
-        async getMaxUploads() {
-            await axios.get(`/defaults/maxUploads/${this.token}/`, {
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            })
-                .then(response => {
-                    this.max_uploads = response.data[0];
                 })
                 .catch(error => {
                     console.log(error);

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('research_types', function (Blueprint $table) {
+        Schema::create('post_formats', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('user');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('research_types');
+        Schema::dropIfExists('research_formats');
     }
 };

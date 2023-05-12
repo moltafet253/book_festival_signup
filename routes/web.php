@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\defaults\centers;
 use App\Http\Controllers\api\defaults\cities_with_gender;
 use App\Http\Controllers\api\defaults\cities_without_gender;
+use App\Http\Controllers\api\defaults\languages;
 use App\Http\Controllers\api\defaults\max_uploads;
 use App\Http\Controllers\api\defaults\provinces_with_gender;
 use App\Http\Controllers\api\defaults\provinces_without_gender;
@@ -46,7 +47,7 @@ use App\Http\Controllers\VueController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/helli', [VueController::class, 'index']);
+Route::get('/book', [VueController::class, 'index']);
 
 //Get's
 Route::middleware('CheckSession')->get('/getpersonalinfo/this/{token}', [GetPersonalInfo::class, 'getpersonalinfo']);
@@ -67,7 +68,7 @@ Route::prefix('defaults')->group(function () {
     Route::middleware('CheckSession')->get('/scientific_groups', [scientific_groups::class, 'scientificGroups']);
     Route::middleware('CheckSession')->get('/research_types', [research_types::class, 'researchTypes']);
     Route::middleware('CheckSession')->get('/special_sections', [special_sections::class, 'specialSections']);
-    Route::middleware('CheckSession')->get('/maxUploads/{token}', [max_uploads::class, 'maxUploads']);
+    Route::middleware('CheckSession')->get('/languages', [languages::class, 'getlanguages']);
 
     //For TeachingInfo
     Route::middleware('CheckSession')->get('/provinces_without_gender/', [provinces_without_gender::class, 'provinces']);

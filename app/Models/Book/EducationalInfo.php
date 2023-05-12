@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Models\Helli;
+namespace App\Models\Book;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ResearchType extends Model
+class EducationalInfo extends Model
 {
-    use HasFactory,SoftDeletes;
-    protected $table='research_types';
+    use HasFactory, SoftDeletes;
+
+    protected $table='educational_infos';
     protected $guarded=[];
+
 }

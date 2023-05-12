@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('research_formats');
+        Schema::dropIfExists('research_types');
     }
 };

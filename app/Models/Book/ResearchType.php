@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models\Helli;
+namespace App\Models\Book;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class HelliUserMaxUploadPost extends Model
+class ResearchType extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $table='helli_user_max_upload_posts';
+    protected $table='research_types';
     protected $guarded=[];
 }

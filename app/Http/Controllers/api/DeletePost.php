@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Helli\HelliUserMaxUploadPost;
-use App\Models\Helli\Post;
+use App\Models\Book\HelliUserMaxUploadPost;
+use App\Models\Book\Post;
 use App\Models\User;
 use App\Models\UserActivityLog;
 use Illuminate\Http\Request;

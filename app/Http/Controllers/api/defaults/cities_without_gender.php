@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\api\defaults;
 
 use App\Http\Controllers\Controller;
-use App\Models\Helli\Provinces;
+use App\Models\Book\Provinces;
 use Illuminate\Http\Request;
 
 class cities_without_gender extends Controller

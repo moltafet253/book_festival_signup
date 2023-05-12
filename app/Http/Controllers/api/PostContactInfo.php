@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Helli\Contact;
+use App\Models\Book\Contact;
 use App\Models\User;
 use App\Models\UserActivityLog;
 use Illuminate\Http\Request;

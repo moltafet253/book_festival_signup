@@ -13,6 +13,20 @@ class DefaultValues extends Seeder
      */
     public function run(): void
     {
+
+        DB::table('post_formats')->insert([
+            ['title' => 'پایان‌نامه', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'کتاب', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+
+        DB::table('languages')->insert([
+            ['title' => 'فارسی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'عربی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'انگلیسی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'اردو', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'فرانسوی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+
         DB::table('scientific_groups')->insert([
             ['title' => 'اخلاق و تربیت', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
             ['title' => 'ادبیات', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
@@ -26,10 +40,11 @@ class DefaultValues extends Seeder
             ['title' => 'کلام', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
         ]);
 
+
+
+
+
         DB::table('research_types')->insert([
-            ['title' => 'تحقیق و تألیف', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'ترجمه', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'تصحیح و تعلیق', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
         ]);
 
         DB::table('research_formats')->insert([

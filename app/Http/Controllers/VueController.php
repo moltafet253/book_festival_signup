@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Helli\Contact;
-use App\Models\Helli\EducationalInfo;
-use App\Models\Helli\HelliUserMaxUploadPost;
-use App\Models\Helli\TeachingInfo;
+use App\Models\Book\Contact;
+use App\Models\Book\EducationalInfo;
+use App\Models\Book\HelliUserMaxUploadPost;
+use App\Models\Book\TeachingInfo;
 use App\Models\User;
 use App\Models\UserActivityLog;
 use GuzzleHttp\Client;

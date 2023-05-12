@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>سامانه ثبت آثار همایش کتاب سال</title>
+    <title>سامانه ثبت آثار همایش کتاب سال حوزه</title>
     @vite(['resources/css/app.css','resources/sass/app.scss','resources/js/app.js'])
 
 </head>

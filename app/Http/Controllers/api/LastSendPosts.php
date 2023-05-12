@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Helli\Contact;
-use App\Models\Helli\EducationalInfo;
-use App\Models\Helli\etelaat_a;
-use App\Models\Helli\Festival;
-use App\Models\Helli\HelliUserMaxUploadPost;
-use App\Models\Helli\Post;
-use App\Models\Helli\TeachingInfo;
+use App\Models\Book\Contact;
+use App\Models\Book\EducationalInfo;
+use App\Models\Book\etelaat_a;
+use App\Models\Book\Festival;
+use App\Models\Book\HelliUserMaxUploadPost;
+use App\Models\Book\Post;
+use App\Models\Book\TeachingInfo;
 use App\Models\User;
 use App\Models\UserActivityLog;
 use Illuminate\Http\Request;
