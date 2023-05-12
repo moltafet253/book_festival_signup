@@ -17,8 +17,8 @@ class VueController extends Controller
     public function index()
     {
         if (isset($_GET['token'])) {
-            $token = $_GET['token']; // دریافت توکن از پارامتر token در کوئری استرینگ
-            $url = "http://api-base.ismc.ir/Redirect/GetTokenInfo?key=" . $token; // تشکیل لینک با پارامتر توکن
+            $token = $_GET['token'];
+            $url = "http://api-base.ismc.ir/Redirect/GetTokenInfo?key=" . $token;
             $client = new Client();
             $response = $client->request('GET', $url);
             $data = json_decode($response->getBody(), true);
@@ -97,14 +97,6 @@ class VueController extends Controller
                     'national_code' => $socialID,
                 ]);
 
-                HelliUserMaxUploadPost::firstOrCreate([
-                    'national_code' => $socialID
-                ], [
-                    'national_code' => $socialID,
-                ]);
-
-
-
                 $agent = new Agent();
                 UserActivityLog::firstorcreate([
                     'user_id' => $user['id'],
@@ -114,7 +106,7 @@ class VueController extends Controller
                     'device' => $agent->device(),
                 ]);
 
-                return view('helli');
+                return view('book');
 
             } else {
                 $agent = new Agent();
@@ -124,7 +116,7 @@ class VueController extends Controller
                     'user_agent' => request()->userAgent(),
                     'device' => $agent->device(),
                 ]);
-                return redirect('http://login.ismc.ir/?refurl=https://ssmp.ismc.ir/helli', 302);
+                return redirect('http://login.ismc.ir/?refurl=http://ssmp.ismc.ir/book', 302);
             }
         } else {
             $agent = new Agent();
@@ -134,7 +126,7 @@ class VueController extends Controller
                 'user_agent' => request()->userAgent(),
                 'device' => $agent->device(),
             ]);
-            return redirect('http://login.ismc.ir/?refurl=https://ssmp.ismc.ir/helli', 302);
+            return redirect('http://login.ismc.ir/?refurl=http://ssmp.ismc.ir/book', 302);
         }
     }
 }

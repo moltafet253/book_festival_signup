@@ -4,11 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>سامانه ثبت آثار جشنواره علامه حلی(ره)</title>
+    <title>سامانه ثبت آثار همایش کتاب سال</title>
     @vite(['resources/css/app.css','resources/sass/app.scss','resources/js/app.js'])
-{{--    <link rel="stylesheet" href="./build/assets/app-72dc1432.css">--}}
-
-
 
 </head>
 <body class="antialiased">
@@ -20,10 +17,8 @@
         <contactinfo :token="{{ json_encode(session('token')) }}"></contactinfo>
         <educationalinfo :token="{{ json_encode(session('token')) }}"></educationalinfo>
         <teachinginfo :token="{{ json_encode(session('token')) }}"></teachinginfo>
-        <bluewarn></bluewarn>
         <posts :token="{{ json_encode(session('token')) }}"></posts>
     </div>
 </div>
-{{--<script src="./build/assets/app-4d0b4cc0.js"></script>--}}
 </body>
 </html>

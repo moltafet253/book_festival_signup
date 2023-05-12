@@ -16,28 +16,28 @@ import axios from 'axios';
 
 const app = createApp({});
 
-import appheader from './components/Helli/appheader.vue';
+import appheader from './components/Book/appheader.vue';
 app.component('appheader', appheader);
 
-import underheader from './components/Helli/underheader.vue';
+import underheader from './components/Book/underheader.vue';
 app.component('underheader', underheader);
 
-import personalinfo from './components/Helli/personalinfo.vue';
+import personalinfo from './components/Book/personalinfo.vue';
 app.component('personalinfo', personalinfo);
 
-import contactinfo from './components/Helli/contactinfo.vue';
+import contactinfo from './components/Book/contactinfo.vue';
 app.component('contactinfo', contactinfo);
 
-import educationalinfo from './components/Helli/educationalinfo.vue';
+import educationalinfo from './components/Book/educationalinfo.vue';
 app.component('educationalinfo', educationalinfo);
 
-import teachinginfo from './components/Helli/teachinginfo.vue';
+import teachinginfo from './components/Book/teachinginfo.vue';
 app.component('teachinginfo', teachinginfo);
 
-import bluewarn from './components/Helli/bluewarn.vue';
+import bluewarn from './components/Book/bluewarn.vue';
 app.component('bluewarn', bluewarn);
 
-import posts from './components/Helli/posts.vue';
+import posts from './components/Book/posts.vue';
 app.component('posts', posts);
 
 
