@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('languages', function (Blueprint $table) {
+        Schema::create('publishers', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('user')->default('0371714941');
@@ -20,8 +20,6 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
-
     }
 
     /**
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('languages');
+        Schema::dropIfExists('publishers');
     }
 };

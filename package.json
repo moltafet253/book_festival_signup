@@ -2,7 +2,6 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-
         "build": "npm-run-all build-app copy-assets",
         "build-app": "vite build",
         "copy-assets": "mkdir public\\build\\assets\\icons && xcopy /s resources\\images\\icons public\\build\\assets\\icons",
@@ -39,8 +38,8 @@
         "install": "^0.13.0",
         "jalaali-js": "^1.2.6",
         "lodash": "^4.17.21",
+        "persian-date": "^1.1.0",
         "vee-validate": "^4.5.8",
         "vue-server-renderer": "^2.7.14"
     }
 }
-

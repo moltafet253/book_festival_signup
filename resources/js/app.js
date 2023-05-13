@@ -7,6 +7,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import axios from 'axios';
+import jalaali from 'jalaali-js';
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin

@@ -27,6 +27,14 @@ class DefaultValues extends Seeder
             ['title' => 'فرانسوی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
         ]);
 
+        DB::table('publishers')->insert([
+            ['title' => 'بوستان کتاب', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'مرکز اسناد انقلاب اسلامی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'اطلاعات', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'آرما', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'حدیث', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+        ]);
+
         DB::table('scientific_groups')->insert([
             ['title' => 'اخلاق و تربیت', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
             ['title' => 'ادبیات', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],

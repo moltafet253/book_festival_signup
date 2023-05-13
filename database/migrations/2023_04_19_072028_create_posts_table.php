@@ -40,7 +40,7 @@ return new class extends Migration
             $table->integer('thesis_grade')->nullable();
             $table->string('thesis_supervisor')->nullable();
             $table->string('thesis_advisor')->nullable();
-            $table->string('thesis_defence_data')->nullable();
+            $table->string('thesis_defence_date')->nullable();
 
 
             //research type

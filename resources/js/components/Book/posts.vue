@@ -24,7 +24,7 @@
 
                         <div class="flex items-center mt-4 gap-16">
 
-<!--                            v-if="showErrorNotSubmittedInfos===false"-->
+                            <!--                            v-if="showErrorNotSubmittedInfos===false"-->
                             <div
 
                                 class="w-full lg:w-3/12 flex-row bg-white  rounded-lg shadow">
@@ -44,21 +44,21 @@
                                     </div>
                                 </div>
                             </div>
-<!--                            <div v-else-if="showErrorNotSubmittedInfos===true"-->
-<!--                                 class=" mx-4 p-3 flex bg-red-100 rounded-xl border border-colorborder w-full">-->
-<!--                                <div class=" flex-row ">-->
-<!--                                    <div class="relative w-full">-->
-<!--                                        <img class="bg-red-500 rounded-md p-1"-->
-<!--                                             src="build/assets/icons/Info Square.svg" alt="">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="w-full flex-row">-->
-<!--                                    <div class="relative w-full mr-3">-->
-<!--                                        <p class="mb-0">کاربر گرامی؛ اطلاعات شما در سامانه ثبت نشده است. لطفا برای ثبت-->
-<!--                                            اثر جدید، در ابتدا اطلاعات خود را تکمیل نمایید.</p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                            <div v-else-if="showErrorNotSubmittedInfos===true"-->
+                            <!--                                 class=" mx-4 p-3 flex bg-red-100 rounded-xl border border-colorborder w-full">-->
+                            <!--                                <div class=" flex-row ">-->
+                            <!--                                    <div class="relative w-full">-->
+                            <!--                                        <img class="bg-red-500 rounded-md p-1"-->
+                            <!--                                             src="build/assets/icons/Info Square.svg" alt="">-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="w-full flex-row">-->
+                            <!--                                    <div class="relative w-full mr-3">-->
+                            <!--                                        <p class="mb-0">کاربر گرامی؛ اطلاعات شما در سامانه ثبت نشده است. لطفا برای ثبت-->
+                            <!--                                            اثر جدید، در ابتدا اطلاعات خود را تکمیل نمایید.</p>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                             <transition enter-active-class="transition ease-out duration-100" enter-class="opacity-0"
                                         enter-to-class="opacity-100" leave-active-class="transition ease-in duration-75"
                                         leave-class="opacity-100" leave-to-class="opacity-0">
@@ -168,7 +168,8 @@
                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
                                                         </div>
                                                     </div>
-                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                    <div v-if="post_format==='book'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
                                                             >ناشر<span
@@ -183,21 +184,23 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="w-full lg:w-8/12 px-4 flex-row">
+                                                    <div v-if="post_format==='book'"
+                                                         class="w-full lg:w-8/12 px-4 flex-row">
                                                         <div class="flex w-full mt-10">
                                                             <div class="flex items-center space-x-2">
                                                                 <img
                                                                     class="bg-yellow-500 md:w-7 w-9 rounded-md p-1 ml-2"
                                                                     src="build/assets/icons/Danger Triangle.svg" alt="">
-                                                                <p class="mb-0 pt-1">سال انتشار اثر باید XXXX بوده و
+                                                                <p class="mb-0 pt-1">سال انتشار اثر باید
+                                                                    {{this.thisYear}}
+                                                                    بوده و
                                                                     نوبت چاپ اول باشد. در غیر اینصورت اثر شما از ارزیابی
                                                                     حذف خواهد شد.</p>
                                                             </div>
                                                         </div>
                                                     </div>
-
-
-                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                    <div v-if="post_format==='book'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2">
                                                                 شابک<span
@@ -207,22 +210,19 @@
                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
                                                         </div>
                                                     </div>
-                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                    <div v-if="post_format==='book'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
-                                                            >قطع<span
-                                                                style="color: red;">*</span></label>
-                                                            <select v-model="book_size"
-                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
-                                                                <option disabled selected value="">انتخاب کنید
-                                                                </option>
-                                                                <option value="منتشر نشده">منتشر نشده</option>
-                                                                <option value="منتشر شده">منتشر شده</option>
-                                                            </select>
-
+                                                            >تعداد جلد
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="number" v-model="number_of_covers"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
                                                         </div>
                                                     </div>
-                                                    <div class="w-full lg:w-4/12 px-4 flex-row">
+                                                    <div v-if="post_format==='book'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
                                                             >تیراژ
@@ -230,6 +230,76 @@
                                                             </label>
                                                             <input type="number" v-model="circulation"
                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="post_format==='thesis'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >شماره گواهی دفاع پایان نامه
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="number" v-model="thesis_certificate_number"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="post_format==='thesis'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >محل دفاع
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="text" v-model="thesis_defence_place"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="post_format==='thesis'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >امتیاز پایان نامه
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="number" v-model="thesis_grade"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="post_format==='thesis'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >نام و نام خانوادگی استاد راهنما
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="text" v-model="thesis_supervisor"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="post_format==='thesis'"
+                                                         class="w-full lg:w-4/12 px-4 flex-row">
+                                                        <div class="relative w-full mb-3">
+                                                            <label class="block uppercase  text-base font-bold mb-2"
+                                                            >نام و نام خانوادگی استاد مشاور
+                                                                <span style="color: red;">*</span>
+                                                            </label>
+                                                            <input type="text" v-model="thesis_advisor"
+                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="post_format==='thesis'"
+                                                         class="w-full lg:w-4/12 px-2 flex-row">
+                                                        <div class="flex w-full mt-3">
+                                                            <div class="flex items-center space-x-2">
+                                                                <img
+                                                                    class="bg-yellow-500 md:w-7 w-9 rounded-md p-1 ml-2"
+                                                                    src="build/assets/icons/Danger Triangle.svg" alt="">
+                                                                <p class="mb-0 pt-1">سال دفاع اثر باید
+                                                                    {{this.thisYear}}
+                                                                    بوده و
+                                                                    نوبت چاپ اول باشد. در غیر اینصورت اثر شما از ارزیابی
+                                                                    حذف خواهد شد.</p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
@@ -245,11 +315,20 @@
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
-                                                            >تعداد جلد
-                                                                <span style="color: red;">*</span>
-                                                            </label>
-                                                            <input type="number" v-model="number_of_covers"
-                                                                   class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
+                                                            >قطع<span
+                                                                style="color: red;">*</span></label>
+                                                            <select v-model="book_size"
+                                                                    class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold ">
+                                                                <option disabled selected value="">انتخاب کنید
+                                                                </option>
+                                                                <option value="رحلی">رحلی</option>
+                                                                <option value="رقعی">رقعی</option>
+                                                                <option value="نیم رقعی">نیم رقعی</option>
+                                                                <option value="وزیری">وزیری</option>
+                                                                <option value="بیاضی">بیاضی</option>
+                                                                <option value="پالتویی">پالتویی</option>
+                                                            </select>
+
                                                         </div>
                                                     </div>
                                                     <div class="w-full lg:w-4/12 px-4 flex-row">
@@ -272,7 +351,6 @@
                                                         <div class="relative w-full mb-3">
                                                             <label class="block uppercase  text-base font-bold mb-2"
                                                             >ویژگی های اثر
-                                                                <span style="color: red;">*</span>
                                                             </label>
                                                             <textarea v-model="properties" rows="3"
                                                                       class="border border-colorborder px-3 py-3   bg-white rounded-lg text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150 font-bold">
@@ -832,7 +910,6 @@
                                 </div>
                             </div>
                         </transition>
-
                         <!-- show modal 2 -->
                         <transition enter-active-class="3 transition ease-out duration-100" enter-class="opacity-0"
                                     enter-to-class="opacity-100" leave-active-class="transition ease-in duration-75"
@@ -1551,7 +1628,7 @@
 
 <script>
 import jalaali from 'jalaali-js';
-import _ from 'lodash'
+import PersianDate from 'persian-date';
 
 export default {
     props: ['token'],
@@ -1586,12 +1663,30 @@ export default {
             research_types: [],
             special_sections: [],
             showModalLastSend: false,
+            thisYear:'',
             postDelivery: '',
             researchType: '',
-            post_format:'',
-            post_type:'',
-            languages:[],
-            language:'',
+            post_format: '',
+            post_type: '',
+            languages: [],
+            language: '',
+            publishers: [],
+            publisher: '',
+            ISSN: '',
+            book_size: '',
+            circulation: '',
+            number_of_covers: '',
+            properties: '',
+            scientific_group1: '',
+            scientific_group2: '',
+
+            //thesis data:
+            thesis_certificate_number: '',
+            thesis_defence_place: '',
+            thesis_grade: '',
+            thesis_supervisor: '',
+            thesis_advisor: '',
+            thesis_defence_date: '',
 
             //send items
             name: '',
@@ -1655,20 +1750,33 @@ export default {
     },
     mounted() {
         this.axiosReq();
+
+        const persianNums = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g];
+        const persianDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+        const now = new Date();
+        const persianDate = new PersianDate(now);
+        let persianYear = persianDate.format('YYYY');
+        let localDate=persianYear;
+        // for (let i = 0; i < persianYear.length; i++) {
+        //     localDate = persianYear.replace(persianNums[i], persianDigits[i]);
+        // }
+
+
+        this.thisYear=localDate;
     },
     methods: {
         showNewPostModal() {
             this.getResearchFormat();
             this.getScientificGroup();
-            this.getResearchType();
             this.getSpecialSection();
             this.getLanguages();
+            this.getPublishers();
             this.showModal3 = true
         },
         editPostShow(id) {
             this.getResearchFormat();
             this.getScientificGroup();
-            this.getResearchType();
             this.getSpecialSection();
             this.showModalEdit = true;
             axios.get(`/posts/getPostInfo/${id}/`)
@@ -1906,6 +2014,20 @@ export default {
                 })
         }
         ,
+        async getPublishers() {
+            axios.get('/defaults/publishers', {
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+                .then(response => {
+                    this.publishers = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
+        ,
         async getScientificGroup() {
             await axios.get('/defaults/scientific_groups', {
                 headers: {
@@ -1914,20 +2036,6 @@ export default {
             })
                 .then(response => {
                     this.scientific_groups = response.data;
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-        }
-        ,
-        async getResearchType() {
-            await axios.get('/defaults/research_types', {
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
-                }
-            })
-                .then(response => {
-                    this.research_types = response.data;
                 })
                 .catch(error => {
                     console.log(error);

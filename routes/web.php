@@ -4,7 +4,6 @@ use App\Http\Controllers\api\defaults\centers;
 use App\Http\Controllers\api\defaults\cities_with_gender;
 use App\Http\Controllers\api\defaults\cities_without_gender;
 use App\Http\Controllers\api\defaults\languages;
-use App\Http\Controllers\api\defaults\max_uploads;
 use App\Http\Controllers\api\defaults\provinces_with_gender;
 use App\Http\Controllers\api\defaults\provinces_without_gender;
 use App\Http\Controllers\api\defaults\research_formats;
@@ -34,6 +33,7 @@ use App\Http\Controllers\api\PostEducationInfo;
 use App\Http\Controllers\api\PostPersonalImage;
 use App\Http\Controllers\api\PostTeachingInfo;
 use App\Http\Controllers\api\UpdatePost;
+use App\Http\Controllers\api\defaults\publishers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VueController;
 
@@ -69,6 +69,7 @@ Route::prefix('defaults')->group(function () {
     Route::middleware('CheckSession')->get('/research_types', [research_types::class, 'researchTypes']);
     Route::middleware('CheckSession')->get('/special_sections', [special_sections::class, 'specialSections']);
     Route::middleware('CheckSession')->get('/languages', [languages::class, 'getlanguages']);
+    Route::middleware('CheckSession')->get('/publishers', [publishers::class, 'getpublishers']);
 
     //For TeachingInfo
     Route::middleware('CheckSession')->get('/provinces_without_gender/', [provinces_without_gender::class, 'provinces']);
