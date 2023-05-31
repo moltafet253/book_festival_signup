@@ -2114,7 +2114,7 @@ export default {
         ,
         handleSubmit() {
             const fileInput = this.$refs.fileInput;
-            const file = fileInput.files[0];
+            // const file = fileInput.files[0];
 
             const formData = new FormData();
 
@@ -2138,7 +2138,7 @@ export default {
                     formData.append('rows[][phonenumber]', row.phonenumber);
                 });
             }
-            formData.append('file', file);
+            // formData.append('file', file);
             axios.post(`/sendpost/this/${this.token}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
@@ -2146,7 +2146,8 @@ export default {
                 }
             })
                 .then(function (response) {
-                    location.reload();
+                    console.log(response.data);
+                    // location.reload();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -2239,28 +2240,24 @@ export default {
         }
         ,
         handleButtonClick2(event) {
-            if (!this.name) {
-                this.emptyErrors = 'نام اثر وارد نشده است.';
-            } else if (!this.research_format) {
-                this.emptyErrors = 'قالب پژوهش انتخاب نشده است.';
-            } else if (!this.scientific_group) {
-                this.emptyErrors = 'گروه علمی انتخاب نشده است.';
-            } else if (!this.research_type) {
-                this.emptyErrors = 'نوع پژوهش انتخاب نشده است.';
-            } else if (!this.page_number && this.research_format === 'مقاله') {
-                this.emptyErrors = 'تعداد صفحات وارد نشده است.';
-            } else if (this.page_number < 0) {
-                this.emptyErrors = 'تعداد صفحات اشتباه وارد شده است.';
-            } else if (!this.publish_status) {
-                this.emptyErrors = 'وضعیت نشر انتخاب نشده است.';
-            } else {
-                this.emptyErrors = '';
-                if (this.fileSelected) { // چک کردن اینکه آیا فایلی انتخاب شده یا خیر
+            // if (!this.name) {
+            //     this.emptyErrors = 'نام اثر وارد نشده است.';
+            // }  else if (!this.scientific_group) {
+            //     this.emptyErrors = 'گروه علمی انتخاب نشده است.';
+            // }  else if (!this.page_number && this.research_format === 'مقاله') {
+            //     this.emptyErrors = 'تعداد صفحات وارد نشده است.';
+            // } else if (this.page_number < 0) {
+            //     this.emptyErrors = 'تعداد صفحات اشتباه وارد شده است.';
+            // } else if (!this.publish_status) {
+            //     this.emptyErrors = 'وضعیت نشر انتخاب نشده است.';
+            // } else {
+            //     this.emptyErrors = '';
+            //     if (this.fileSelected) { // چک کردن اینکه آیا فایلی انتخاب شده یا خیر
                     this.showModal = true;
-                } else {
-                    this.error = 'خطا: فایلی انتخاب نشده است!'; // افزودن پیغام خطا در صورت عدم انتخاب فایل
-                }
-            }
+                // } else {
+                //     this.error = 'خطا: فایلی انتخاب نشده است!'; // افزودن پیغام خطا در صورت عدم انتخاب فایل
+                // }
+            // }
         }
         ,
         addRow() {

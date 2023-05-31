@@ -15,8 +15,8 @@
     <div class="px-16">
         <personalinfo :token="{{json_encode(session('token'))}}"></personalinfo>
         <contactinfo :token="{{ json_encode(session('token')) }}"></contactinfo>
-        <educationalinfo :token="{{ json_encode(session('token')) }}"></educationalinfo>
-        <teachinginfo :token="{{ json_encode(session('token')) }}"></teachinginfo>
+{{--        <educationalinfo :token="{{ json_encode(session('token')) }}"></educationalinfo>--}}
+{{--        <teachinginfo :token="{{ json_encode(session('token')) }}"></teachinginfo>--}}
         <posts :token="{{ json_encode(session('token')) }}"></posts>
     </div>
 </div>

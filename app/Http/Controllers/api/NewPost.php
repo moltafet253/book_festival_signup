@@ -16,6 +16,7 @@ class NewPost extends Controller
 {
     public function newPost(Request $request, $token)
     {
+        return $request;
         $nationalcode = User::where('remember_token', $token)->value('national_code');
 
         $user_id = DB::table('users')->where('national_code', $nationalcode)->value('id');
@@ -31,9 +32,9 @@ class NewPost extends Controller
         $special_section = $request->input('special_section');
         $activityType = $request->input('activityType');
 
-        $file = $request->file('file');
+//        $file = $request->file('file');
         $hashName = uniqid('', true) . '.' . $request->file('file')->getClientOriginalName();
-        $path = $file->storeAs('public/asarFiles/' . $hashName . '/', $hashName);
+//        $path = $file->storeAs('public/asarFiles/' . $hashName . '/', $hashName);
 
         $post = Post::create([
             'user_id' => $user_id,
@@ -46,10 +47,8 @@ class NewPost extends Controller
             'publish_status' => $publish_status,
             'special_section' => $special_section,
             'activity_type' => $activityType,
-            'file_src' => $path,
+//            'file_src' => $path,
         ]);
-
-        HelliUserMaxUploadPost::where('national_code', '=', $nationalcode)->decrement('numbers', $decrementBy);
 
         if ($activityType === 'moshtarak') {
             $myCooperation = $request->input('myCooperation');
@@ -74,10 +73,7 @@ class NewPost extends Controller
                 'participation_percentage' => $cooperators[$e]['Cooperation'],
                 'mobile' => $cooperators[$f]['phonenumber'],
             ]);
-            HelliUserMaxUploadPost::firstorcreate([
-                'national_code' => $cooperators[$c]['codemeli']
-            ]);
-//        HelliUserMaxUploadPost::where('national_code', '=', $cooperators[$c]['codemeli'])->decrement('numbers', $decrementBy);
+
             $count = count($cooperators) / 6;
             for ($i = 2; $i <= $count; $i++) {
                 Participant::create([
@@ -91,15 +87,7 @@ class NewPost extends Controller
                 ]);
             }
             $c = 2;
-            for ($i = 2; $i <= $count; $i++) {
-                HelliUserMaxUploadPost::firstorcreate([
-                    'national_code' => $cooperators[$c += 6]['codemeli']
-                ]);
-            }
-//        $c = 2;
-//        for ($i = 2; $i <= $count; $i++) {
-//            HelliUserMaxUploadPost::where('national_code', '=', $cooperators[$c += 6]['codemeli'])->decrement('numbers', $decrementBy);
-//        }
+
             $agent = new Agent();
             UserActivityLog::create([
                 'user_id' => session('user_id'),
