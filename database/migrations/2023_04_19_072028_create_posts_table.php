@@ -45,10 +45,10 @@ return new class extends Migration
 
             //research type
             $table->string('research_type');
-            $table->unsignedBigInteger('scientific_group_v1');
-            $table->foreign('scientific_group_v1')->references('id')->on('scientific_groups');
-            $table->unsignedBigInteger('scientific_group_v2')->nullable();
-            $table->foreign('scientific_group_v2')->references('id')->on('scientific_groups');
+            $table->string('scientific_group_v1');
+//            $table->foreign('scientific_group_v1')->references('id')->on('scientific_groups');
+            $table->string('scientific_group_v2')->nullable();
+//            $table->foreign('scientific_group_v2')->references('id')->on('scientific_groups');
 
             //cooperation method
             $table->string('activity_type')->default('فردی');
