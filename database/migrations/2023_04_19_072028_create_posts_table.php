@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('ISSN')->nullable();
             $table->string('publish_status')->default('منتشر نشده')->nullable();
             $table->integer('number_of_covers')->nullable();
-            $table->integer('book_size')->nullable();
+            $table->string('book_size')->nullable();
             $table->integer('circulation')->nullable();
 
             //thesis fields
