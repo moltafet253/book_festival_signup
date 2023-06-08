@@ -36,19 +36,41 @@ class DefaultValues extends Seeder
         ]);
 
         DB::table('scientific_groups')->insert([
-            ['title' => 'اخلاق و تربیت', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'ادبیات', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'اصول فقه', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'تاریخ اسلام', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'تفسیر و علوم قرآنی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'علوم انسانی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'علوم حدیث و درایه', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'فقه و حقوق اسلامی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
-            ['title' => 'فلسفه و منطق', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'اخلاق و عرفان', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'ادبیات و هنر', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'اقتصاد', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'مدیریت', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'تاریخ،سیره و تراجم', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'ترجمه', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'تصحیح و تحقیق', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'تفسیر و علوم قرآن', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'تکنولوژی آموزشی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'حدیث، درایه و رجال', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'حقوق', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'علوم سیاسی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'علوم اجتماعی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'علوم تربیتی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'روانشناسی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'فقه و اصول', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
             ['title' => 'کلام', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'کتب مرجع', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'انقلاب اسلامی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
         ]);
 
-
+        DB::table('special_sections')->insert([
+            ['title' => 'جهاد تبیین', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'فقه معاصر', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'ابعاد علمی بیانیه گام دوم انقلاب', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'زن و خانواده', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'الگوی اسلامی ایرانی پیشرفت', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'علوم انسانی اسلامی، فضای مجازی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'آسیب های اجتماعی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'جمعیت', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'اقتصاد مقاومتی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'سبک زندگی اسلامی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'هنر (فلسفه هنر، هنر در اسلام)', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+            ['title' => 'محیط زیست و منابع طبیعی', 'user' => '0371714941', 'created_at' => now(), 'updated_at' => now()],
+        ]);
 
 
 
