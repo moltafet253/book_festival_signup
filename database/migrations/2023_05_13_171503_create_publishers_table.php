@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('publishers', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('user')->default('0371714941');
+            $table->string('user')->default('1');
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
