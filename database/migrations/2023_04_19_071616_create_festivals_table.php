@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('start_date');
             $table->string('starter');
-            $table->string('finish_date');
-            $table->string('finisher');
+            $table->string('finish_date')->nullable();
+            $table->string('finisher')->nullable();
             $table->boolean('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
