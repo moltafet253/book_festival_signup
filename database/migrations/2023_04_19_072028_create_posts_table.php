@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -48,6 +49,11 @@ return new class extends Migration
 //            $table->foreign('scientific_group_v1')->references('id')->on('scientific_groups');
             $table->string('scientific_group_v2')->nullable();
 //            $table->foreign('scientific_group_v2')->references('id')->on('scientific_groups');
+
+            //Sorting
+            $table->tinyInteger('sorted')->default(0);
+            $table->integer('sorter')->nullable();
+            $table->string('sorted_date')->default(DB::raw('CURRENT_TIMESTAMP'));
 
             //cooperation method
             $table->string('activity_type')->default('فردی');
